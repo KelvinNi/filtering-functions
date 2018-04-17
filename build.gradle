@@ -1,0 +1,29 @@
+group 'oerg.robotninjas'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.3'
+    }
+}
+
+apply plugin: 'com.github.johnrengelman.shadow'
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+    compile 'net.thisptr:jackson-jq:0.0.8'
+    compile 'net.thisptr:jackson-jq-extra:0.0.8'
+    compile 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.4.5'
+    compile 'org.apache.pulsar:pulsar-functions-api:2.0.0-incubating-SNAPSHOT'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
